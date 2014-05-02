@@ -1,0 +1,9 @@
+#!/bin/bash
+# usage: bin/compile <build-dir> <cache-dir>
+
+set -eo pipefail
+
+mkdir -p "$1" "$2"
+
+echo "-----> Compiling simple firewall test app"
+echo "-----> Compiled simple firewall test app. Oh Yeah."
