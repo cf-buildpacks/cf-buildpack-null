@@ -1,6 +1,6 @@
 require 'zip'
 
-module CloudFoundry
+
   module BuildpackPackager
     DEPENDENCIES = []
 
@@ -51,4 +51,3 @@ module CloudFoundry
       end
     end
   end
-end
