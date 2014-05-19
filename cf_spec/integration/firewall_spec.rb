@@ -1,3 +1,4 @@
+$: << 'cf_spec'
 require "spec_helper"
 
 describe 'deploying a firewall test app', :null_buildpack do
