@@ -18,7 +18,6 @@ describe 'deploying a firewall test app', :null_buildpack do
     if Machete::BuildpackMode.offline?
 
       it "causes an error when trying to access the internet" do
-        pending("Waiting on a firewall rule that will reject the packet, not drop it")
         Machete.deploy_app(app_name, :null) do |app|
           expect(app.output).to include ""
         end
