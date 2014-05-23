@@ -34,25 +34,8 @@ describe 'deploying a firewall test app', :null_buildpack do
   context "an app which uses AppDirect and its services" do
     let(:app_name) { "app_direct_app" }
 
-    let(:manifest) { {
-      'applications' => [
-        {
-          'name' => 'app-direct-app',
-          'env' => {
-            'APPDIRECT_URL' => ENV["APPDIRECT_URL"]
-          }
-        }
-      ]
-    } }
-
-    it "successfully connects to AppDirect" do
-      Machete.deploy_app(app_name, :null, manifest: manifest) do |app|
-        expect(app.staging_log).to include "Connected to AppDirect"
-      end
-    end
-
     it "successfully connects to Postgres" do
-      Machete.deploy_app(app_name, :null, manifest: manifest, with_pg: true) do |app|
+      Machete.deploy_app(app_name, :null, with_pg: true) do |app|
         expect(app.homepage_html).to include "Connected to Postgres"
       end
     end
