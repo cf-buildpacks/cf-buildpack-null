@@ -1,2 +1,2 @@
 #!/bin/sh
-curl google.com
+wget --connect-timeout 5 google.com

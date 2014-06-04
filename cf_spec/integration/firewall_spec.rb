@@ -19,7 +19,7 @@ describe 'deploying a firewall test app', :null_buildpack do
 
       it "causes an error when trying to access the internet" do
         Machete.deploy_app(app_name, :null) do |app|
-          expect(app.output).to include ""
+          expect(app.output).to include "Connection refused"
         end
       end
     else
