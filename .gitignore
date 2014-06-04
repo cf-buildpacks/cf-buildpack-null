@@ -9,6 +9,7 @@
 /test/version_tmp/
 /tmp/
 /log
+*_buildpack.zip
 
 ## Specific to RubyMotion:
 .dat*
