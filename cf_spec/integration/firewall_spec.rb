@@ -30,14 +30,4 @@ describe 'deploying a firewall test app', :null_buildpack do
       end
     end
   end
-
-  context "an app which uses AppDirect and its services" do
-    let(:app_name) { "app_direct_app" }
-
-    it "successfully connects to Postgres" do
-      Machete.deploy_app(app_name, :null, with_pg: true) do |app|
-        expect(app.homepage_html).to include "Connected to Postgres"
-      end
-    end
-  end
 end
