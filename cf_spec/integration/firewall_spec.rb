@@ -12,20 +12,22 @@ describe 'deploying a firewall test app' do
     end
   end
 
-  context "an app that accesses the internet" do
-    let(:app_name) { "online_app" }
+  context 'an uncached buildpack that accesses the internet' do
+    let(:app_name) { 'online_app' }
 
-    if Machete::BuildpackMode.offline?
-
-      it "causes an error when trying to access the internet" do
+    context 'in an online environment', if: Machete::BuildpackMode.online? do
+      it 'does not fail' do
         Machete.deploy_app(app_name) do |app|
-          expect(app.output).to include "Connection refused"
+          expect(app.homepage_html).to include 'Index of'
         end
       end
-    else
-      it "is in online mode and does not fail" do
+    end
+
+    context 'in an offline environment', if: Machete::BuildpackMode.offline? do
+      it 'causes an error when trying to access the internet' do
         Machete.deploy_app(app_name) do |app|
-          expect(app.homepage_html).to include "Index of"
+          expect(app.output).to include 'Connection refused'
+          expect(app.cf_internet_log).to include 'cf-to-internet-traffic'
         end
       end
     end
