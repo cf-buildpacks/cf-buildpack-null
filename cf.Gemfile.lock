@@ -1,11 +1,10 @@
 GIT
   remote: git://github.com/cf-buildpacks/machete.git
-  revision: efcd42e5250757b0b24aa94fc8efc28bc8f6e125
+  revision: 44b615dfb6757a442ab9cbcb7fca21611105c733
   branch: master
   specs:
     machete (0.0.1)
       httparty
-      rake
       rspec
 
 GEM
@@ -17,7 +16,6 @@ GEM
       multi_xml (>= 0.5.2)
     json (1.8.1)
     multi_xml (0.5.5)
-    rake (10.3.2)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
