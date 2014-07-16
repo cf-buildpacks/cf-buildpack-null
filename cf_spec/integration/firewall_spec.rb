@@ -9,7 +9,7 @@ describe 'deploying a firewall test app', :null_buildpack do
 
     it 'deploys the app successfully' do
       expect(app).to be_running
-      expect(app.homepage_body).to include 'Index of'
+      expect(app).to have_page_body 'Index of'
       expect(app.host).not_to have_internet_traffic
     end
   end
@@ -29,7 +29,7 @@ describe 'deploying a firewall test app', :null_buildpack do
     context 'in an online environment', if: Machete::BuildpackMode.online? do
       it 'is in online mode and does not fail' do
         expect(app).to be_running
-        expect(app.homepage_body).to include 'Index of'
+        expect(app).to have_page_body 'Index of'
       end
     end
   end
