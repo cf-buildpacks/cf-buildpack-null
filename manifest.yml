@@ -1,0 +1,7 @@
+---
+language: 'null'
+
+dependencies: []
+
+exclude_files:
+  - .git
