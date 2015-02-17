@@ -10,7 +10,7 @@ describe 'deploying a firewall test app', :null_buildpack do
 
     it 'deploys the app successfully' do
       expect(app).to be_running
-      
+
       browser.visit_path('/')
       expect(browser).to have_body 'Index of'
 
@@ -21,22 +21,12 @@ describe 'deploying a firewall test app', :null_buildpack do
   context 'an uncached buildpack that accesses the internet' do
     let(:app_name) { 'online_app' }
 
-    context 'in an offline environment', if: Machete::BuildpackMode.offline? do
-      it 'causes an error when trying to access the internet' do
-        expect(app.host).to have_internet_traffic
-        expect(app).to have_logged 'Network is unreachable'
-        expect(app).to have_logged 'Staging failed: Buildpack compilation step failed'
-        expect(app).not_to be_running
-      end
-    end
-    
-    context 'in an online environment', if: Machete::BuildpackMode.online? do
-      it 'is in online mode and does not fail' do
-        expect(app).to be_running
+    it 'is in online mode and does not fail' do
+      expect(app.host).to have_internet_traffic
+      expect(app).to be_running
 
-        browser.visit_path('/')
-        expect(browser).to have_body 'Index of'
-      end
+      browser.visit_path('/')
+      expect(browser).to have_body 'Index of'
     end
   end
 end
