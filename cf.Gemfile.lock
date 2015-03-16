@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/cf-buildpacks/buildpack-packager.git
+  remote: https://github.com/cf-buildpacks/buildpack-packager
   revision: 1bcd751aa4a13bc0ca684e32584ae32c81c3798b
   ref: 1bcd751
   specs:
@@ -7,8 +7,8 @@ GIT
       activesupport (~> 4.1.8)
 
 GIT
-  remote: git://github.com/cf-buildpacks/machete.git
-  revision: 7119bcf250ba87427aab1c9db395e63eb67ae6ba
+  remote: https://github.com/cf-buildpacks/machete
+  revision: 148ce08cb6ba25c23bf7fb577b138e868a6f337e
   branch: master
   specs:
     machete (0.0.1)
@@ -19,7 +19,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.1.8)
+    activesupport (4.1.9)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -29,16 +29,16 @@ GEM
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.6.11)
+    i18n (0.7.0)
     json (1.8.2)
-    minitest (5.4.3)
+    minitest (5.5.1)
     multi_xml (0.5.5)
     rrrretry (1.0.0)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
       rspec-mocks (~> 3.2.0)
-    rspec-core (3.2.1)
+    rspec-core (3.2.2)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -47,7 +47,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    thread_safe (0.3.4)
+    thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
