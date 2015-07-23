@@ -1,4 +1,3 @@
-cf-buildpack-null
-=================
+# machete-firewall-test
 
-Tests Machete's firewall code. All the test runner scripts are designed to run buildpack integrations from the root of a buildpack. This buildpack was pulled from Machete's integrations to let us use the same runner scripts.
+Tests that a deployment of CF has been configured to log Internet traffic for use with the `has_internet_traffic?` matcher.
