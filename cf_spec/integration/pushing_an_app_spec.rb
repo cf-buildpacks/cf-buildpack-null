@@ -1,8 +1,8 @@
 $: << 'cf_spec'
 require 'spec_helper'
 
-describe 'app state', :null_buildpack do
-  subject(:app) { Machete.deploy_app(app_name) }
+describe 'app state' do
+  subject(:app) { Machete.deploy_app(app_name, {buildpack: 'binary_buildpack'}) }
   let(:browser) { Machete::Browser.new(app) }
   let(:app_name) { 'app_that_does_not_access_the_internet' }
 
@@ -14,8 +14,8 @@ describe 'app state', :null_buildpack do
   end
 end
 
-describe 'logging', :null_buildpack do
-  subject(:app) { Machete.deploy_app(app_name) }
+describe 'logging' do
+  subject(:app) { Machete.deploy_app(app_name, {buildpack: 'binary_buildpack'}) }
   let(:browser) { Machete::Browser.new(app) }
 
   context 'an app that does not access the internet' do
